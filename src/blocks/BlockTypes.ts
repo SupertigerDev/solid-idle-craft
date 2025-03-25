@@ -10,6 +10,7 @@ export interface Block {
   rarity?: number;
   miningLevel?: typeof MiningLevel[keyof typeof MiningLevel];
   stackable?: boolean;
+  recipe?: { blockId: string; count: number }[];
 }
 
 export type Blocks = Record<string, Block>;

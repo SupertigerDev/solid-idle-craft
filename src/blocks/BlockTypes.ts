@@ -14,5 +14,3 @@ export interface Block {
 }
 
 export type Blocks = Record<string, Block>;
-
-

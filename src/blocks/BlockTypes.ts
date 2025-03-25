@@ -11,6 +11,7 @@ export interface Block {
   miningLevel?: typeof MiningLevel[keyof typeof MiningLevel];
   stackable?: boolean;
   recipe?: { blockId: string; count: number }[];
+  craftCount?: number;
 }
 
 export type Blocks = Record<string, Block>;

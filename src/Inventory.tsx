@@ -23,14 +23,28 @@ const addItem = (block: Block) => {
   setInventory(inventory.length, item);
 };
 
-const removeItem = (index: number) => {
-  console.warn("Not implemented");
+const removeItem = (blockId: string) => {
+  const itemIndex = inventory.findLastIndex((i) => i.block.id === blockId);
+  if (itemIndex === -1) return;
+  const item = inventory[itemIndex];
+  if (item.count === 1) {
+    setInventory((inventory) => {
+      return inventory.filter((item, index) => index !== itemIndex);
+    });
+    return;
+  }
+  setInventory(itemIndex, "count", item.count - 1);
+
 };
+
+
+const getBlock = (blockId: string) => inventory.find((i) => i.block.id === blockId);
 
 const builder = {
   items: inventory,
   addItem,
   removeItem,
+  getBlock
 };
 
 export const useInventory = () => {

@@ -1,4 +1,5 @@
 import style from "./App.module.css";
+import { CrafterArea } from "./CrafterArea";
 import { InventoryArea } from "./InventoryArea";
 import { MineArea } from "./MineArea";
 
@@ -7,6 +8,7 @@ const App = () => {
     <div class={style.app}>
       <MineArea />
       <InventoryArea />
+      <CrafterArea />
     </div>
   );
 };
